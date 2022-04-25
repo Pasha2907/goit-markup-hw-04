@@ -6,6 +6,9 @@
     --default-btn-color: #F5F4FA;
     --main-background-color: #2F303A;
     --second-background-color: #F5F4FA;
+    --third-background-color: #ffffff;
+    --main-svg-color: #AFB1B8;
+    --second-svg-color: #ffffff;
 }
 
 p, h1, h2, h3, h4, h5, h6{
@@ -27,6 +30,7 @@ button{
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
+    /* border: 1px solid tomato; */
 }
 
 body{
@@ -145,7 +149,7 @@ body{
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--main-text-color);
-    fill: #757575;
+    fill: var(--main-text-color);
 
 }
 
@@ -156,31 +160,15 @@ body{
     fill: var(--accent-color);
 }
 
-.header-contact-link::before{
-    display: inline-block;
-    content: '';
+.contact-icon{
     margin-right: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
-.header-contact-link.mail::before{
-    width: 16px;
-    height: 12px;
-    background-image: url(../img/mail.svg);
+.header-contact-link{
+    display: flex;
+    align-items: center;
 }
 
-.header-contact-link.tel::before{
-    width: 10px;
-    height: 16px;
-    background-image: url(../img/tel.svg);
-}
-
-.header-contact-link:hover::before,
-.header-contact-link:focus::before{
-    color: var(--accent-color);
-    fill: var(--accent-color);
-}
 
 /* ---------------------------------------------------------------------------------------------- */
 /* --------------------------------------------------INDEX.HTML-------------------------------------- */
@@ -189,16 +177,23 @@ body{
 /* --------------------------------------------------HERO-------------------------------------- */
 
 .hero{
+    max-width: 1600px;
+    max-height: 600px;
+    margin: 0 auto;
     text-align: center;
     background-color: var(--main-background-color);
     padding-top: 200px;
     padding-bottom: 200px;
     background-image: 
-    linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    linear-gradient(
+        rgba(47, 48, 58, 0.4), 
+        rgba(47, 48, 58, 0.4)),
     url(../img/bgi.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
+
 
 .hero-title{
     font-weight: 900;
@@ -255,7 +250,7 @@ body{
     content: '';
     display: block;
     height: 120px;
-    background-color: #F5F4FA;
+    background-color: var(--second-background-color);
     background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 30px;
@@ -344,7 +339,7 @@ body{
 }
 
 .team-item > .member{
-    background-color: #ffffff;
+    background-color: var(--third-background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     padding-top: 30px;
@@ -393,11 +388,11 @@ body{
     display: flex;
     width: 44px;
     height: 44px;
-    background-color: #ffffff;
+    background-color: var(--third-background-color);
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    color: #AFB1B8;
+    color: var(--main-svg-color)
 }
 
 .team-soc-icon{
@@ -405,8 +400,8 @@ body{
 }
 
 .team-soc-link:hover{
-    background-color: #2196F3;
-    color: #ffffff;
+    background-color: var(--accent-color);
+    color: var(--second-svg-color);
 }
 
 .team-soc-item + .team-soc-item{
@@ -441,12 +436,12 @@ body{
     display: flex;
     width: 170px;
     height: 92px;
-    background-color: #ffffff;
+    background-color: var(--third-background-color);
     justify-content: center;
     align-items: center;
-    border: 1px solid #AFB1B8;
+    border: 1px solid var(--main-svg-color);
     border-radius: 4px;
-    color: #AFB1B8;
+    color: var(--main-svg-color);
 }
 
 .customers-icon{
@@ -454,8 +449,8 @@ body{
 }
 
 .customers-link:hover{
-    border: 1px solid #2196F3;
-    color: #2196F3;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .customers-item + .customers-item{
@@ -488,10 +483,6 @@ body{
     margin-left: 8px;
 }
 
-.hero-item-porfolio:hover,
-.hero-item-porfolio:focus{
-    
-}
 
 .component-list-porfolio{
     display: flex;
@@ -568,6 +559,11 @@ body{
 
 }
 
+.component-item-porfolio:hover,
+.component-item-porfolio:focus{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 /* --------------------------------------------------FOOTER-------------------------------------- */
 
 .footer{
@@ -578,7 +574,6 @@ body{
 
 .container.all{
     display: flex;
-    align-items: center;
 }
 
 .footer-about{
@@ -636,6 +631,7 @@ body{
 .footer-join{
     width: 206px;
     height: 80px;
+    margin-top: 15px;
 }
 
 .footer-join-title{
@@ -644,14 +640,13 @@ body{
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--main-title-color);
 
     margin-bottom: 20px;
 }
 
 .footer-join-list{
     display: flex;
-    /* justify-content: center; */
 }
 
 .footer-join-link{
@@ -662,11 +657,11 @@ body{
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    fill: #FFFFFF;
+    fill: var(--main-title-color);
 }
 
 .footer-join-link:hover{
-    background-color: #2196F3;
+    background-color: var(--accent-color);
 }
 
 .footer-join-item + .footer-join-item{
