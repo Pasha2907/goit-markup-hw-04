@@ -399,7 +399,8 @@ body{
     fill: currentColor;
 }
 
-.team-soc-link:hover{
+.team-soc-link:hover,
+.team-soc-link:focus{
     background-color: var(--accent-color);
     color: var(--second-svg-color);
 }
@@ -448,7 +449,8 @@ body{
     fill: currentColor;
 }
 
-.customers-link:hover{
+.customers-link:hover,
+.customers-link:focus{
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
 }
@@ -533,7 +535,22 @@ body{
     background: var(--accent-color);
     color: var(--main-title-color);
     cursor: pointer;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 
+    0px 3px 1px rgba(0, 0, 0, 0.1), 
+    0px 1px 2px rgba(0, 0, 0, 0.08), 
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.component-item-link{
+    display: block;
+}
+
+.component-item-link:hover,
+.component-item-link:focus{
+    box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .component-subtitle-porfolio{
@@ -559,10 +576,6 @@ body{
 
 }
 
-.component-item-porfolio:hover,
-.component-item-porfolio:focus{
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
 
 /* --------------------------------------------------FOOTER-------------------------------------- */
 
@@ -660,7 +673,8 @@ body{
     fill: var(--main-title-color);
 }
 
-.footer-join-link:hover{
+.footer-join-link:hover,
+.footer-join-link:focus{
     background-color: var(--accent-color);
 }
 
